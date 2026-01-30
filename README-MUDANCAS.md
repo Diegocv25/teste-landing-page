@@ -30,3 +30,8 @@ Este arquivo documenta as alterações que foram feitas para tentar tornar o pro
 ## 5) Estado atual
 
 O projeto tem **arquivos de Vite e de Next.js ao mesmo tempo**. Para o Lovable funcionar, o build precisa ser feito via **Vite** (scripts no `package.json`).
+
+## 6) Limpeza do Next.js
+
+- Removido `next.config.mjs` e a pasta `app/`.
+- Removidas dependências `next` e `next-themes` do `package.json` para evitar detecção incorreta no Vercel/Lovable.

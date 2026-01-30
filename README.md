@@ -17,4 +17,4 @@ Este repositório contém a **landing page** do projeto **Nexus Automações**, 
 
 ## Observação importante
 
-Ainda existem pastas/arquivos de **Next.js** (`app/`, `next.config.mjs`) no projeto por histórico de migração. O fluxo atual esperado pelo Lovable é **Vite** (via `index.html` + `src/main.tsx`).
+O projeto está totalmente alinhado ao fluxo **Vite** (via `index.html` + `src/main.tsx`) e não possui mais dependências/configurações de Next.js.
