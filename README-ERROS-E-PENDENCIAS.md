@@ -1,10 +1,11 @@
 # Erros atuais e o que falta para o preview voltar
 
+
 ## Problema que derruba o preview
 
 O build do Lovable está falhando com:
 
-> `Missing script: "build:dev"`
+> `Script ausente: "build:dev"`
 
 Ou seja: **o Lovable tenta rodar `npm run build:dev`** e esse script **não existe** no `package.json`.
 
@@ -16,23 +17,18 @@ No `package.json`, ajuste a seção `scripts` para conter pelo menos:
 {
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "construir": "vite construir",
     "build:dev": "vite build --mode development",
-    "preview": "vite preview --host --port 8080"
+    "pré-visualização": "vite preview --host --port 8080"
   }
 }
 ```
 
 Depois disso, o preview deve voltar a compilar e carregar.
 
-## Pendência estrutural (não bloqueia o build, mas causa confusão)
+## Pendência estrutural (resolvida)
 
-O projeto ainda contém **Next.js** (`app/`, `next.config.mjs`, `next` em dependencies). Hoje o que o Lovable precisa é **Vite**.
-
-Opções:
-
-1) **Manter** Next.js por enquanto (mais rápido) — só corrigir os scripts para Vite.
-2) **Limpar** Next.js (mais correto) — remover pastas `app/`/`components/` duplicadas fora de `src/` e remover `next`/`next-themes` se não forem usados.
+Os arquivos e dependências de **Next.js** foram removidos para evitar que o Vercel/Lovable detectem o projeto como Next e tentem rodar `next build`.
 
 ## Como validar que voltou
 
